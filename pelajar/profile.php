@@ -3,10 +3,10 @@
     <h3>Ubah Katalaluan</h3>
     <form action="tukarkata.php" method="post">
         <label>Katalaluan Lama :</label>
-        <input type="text" name="katalama" required>
+        <input type="password" name="katalama" required>
         <br>
         <label>Katalaluan Baru:</label>
-        <input type="text" name="katabaru" required>
+        <input type="password" name="katabaru" required>
 
         <br>
         <button type="submit">Kemaskini</button>

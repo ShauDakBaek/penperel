@@ -1,3 +1,6 @@
+<?php
+$idpelajar=$_SESSION['idpelajar'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>Senarai Warden</h2>
+<h2>Senarai Peralatan Elektrik</h2>
 <?php
 if(!isset($_GET['edit'])){
     ?>
@@ -17,20 +20,16 @@ if(!isset($_GET['edit'])){
             <legend>Daftar Peralatan</legend>
             <table>
                 <tr>
-                    <td>pelajar</td>
-                    <td><input type="text" name="pelajar" required></td>
+                    <td>Jenis Peralatan</td>
+                    <td><input type="text" name="jenisperalatan" required minlength="2" ></td>
                 </tr>
                 <tr>
-                    <td>jenis peralatan</td>
-                    <td><input type="text" name="jenisperalatan" required minlength="12" maxlength="12"></td>
+                    <td>Jenama</td>
+                    <td><input type="text" name="jenama" required minlength="2" ></td>
                 </tr>
                 <tr>
-                    <td>jenama</td>
-                    <td><input type="text" name="jenama" required minlength="5" maxlength="10"></td>
-                </tr>
-                <tr>
-                    <td>no siri</td>
-                    <td><input type="text" name="nosiri" required minlength="5" maxlength="10"></td>
+                    <td>No. Siri</td>
+                    <td><input type="text" name="nosiri" required minlength="2" ></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -43,27 +42,27 @@ if(!isset($_GET['edit'])){
     </form>
     <?php
 }else{
-    $idwarden = $_GET['edit'];
-    $sql = "SELECT * FROM warden WHERE idwarden = $idwarden";
+    $idperalatan = $_GET['edit'];
+    $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan";
     $result = $conn->query($sql);
     $row = $result->fetch_object();
     ?>
     <form action="kemaskini.php" method="post">
-        <input type="hidden" name="idwarden" value="<?php echo $row->idwarden; ?>">
+        <input type="hidden" name="idperalatan" value="<?php echo $row->idperalatan; ?>">
         <fieldset>
-            <legend>Kemaskini Data Warden</legend>
+            <legend>Kemaskini Data Peralatan</legend>
             <table>
                 <tr>
-                    <td>Nama Warden</td>
-                    <td><input type="text" name="namawarden" required value="<?php echo $row->namawarden; ?>"></td>
+                    <td>Jenis Peralatan</td>
+                    <td><input type="text" name="jenisperalatan" required value="<?php echo $row->jenisperalatan; ?>"></td>
                 </tr>
                 <tr>
-                    <td>No. Matrik</td>
-                    <td><input type="text" name="nokpwarden" required value="<?php echo $row->nokpwarden; ?>" minlength="12" maxlength="12"></td>
+                    <td>Jenama</td>
+                    <td><input type="text" name="jenama" required value="<?php echo $row->jenama; ?>"></td>
                 </tr>
                 <tr>
-                    <td>Katalaluan</td>
-                    <td><input type="text" name="kata" required minlength="5" maxlength="5"></td>
+                    <td>No. siri</td>
+                    <td><input type="text" name="nosiri" required value="<?php echo $row->nosiri; ?>"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -80,24 +79,27 @@ if(!isset($_GET['edit'])){
 <table class="table">
     <tr>
         <th>Bil</th>
-        <th>Nama Warden</th>
-        <th>No. KP Warden</th>
+        <th>Jenis Peralatan</th>
+        <th>No. Siri</th>
+        <th>Jenama</th>
         <th>Tindakan</th>
     </tr>
+
     <?php
     $bil = 1;
-    $sql = "SELECT * FROM warden ORDER BY namawarden";
+    $sql = "SELECT * FROM peralatan WHERE pelajar = $idpelajar ORDER BY jenisperalatan";
     $result = $conn->query($sql);
     while ($row = $result->fetch_object()) {
         ?>
         <tr>
             <td><?php echo $bil++; ?></td>
-            <td><?php echo $row->namawarden; ?></td>
-            <td><?php echo $row->nokpwarden; ?></td>
+            <td><?php echo $row->jenisperalatan; ?></td>
+            <td><?php echo $row->nosiri; ?></td>
+            <td><?php echo $row->jenama; ?></td>
             <td>
-                <a href="index.php?menu=senarai_warden&edit=<?php echo $row->idwarden; ?>">Edit</a>
+                <a href="index.php?menu=senarai_peralatan&edit=<?php echo $row->idperalatan; ?>">Edit</a>
                 |
-                <a href="padam.php?idwarden=<?php echo $row->idwarden; ?>" onclick="return sahkan()">Padam</a>
+                <a href="padam.php?idperalatan=<?php echo $row->idperalatan; ?>" onclick="return sahkan()">Padam</a>
             </td>
         </tr>
         <?php
