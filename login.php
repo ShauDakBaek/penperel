@@ -35,13 +35,13 @@ if ($idpengguna == 'admin') {
             <?php
         }
     } else {
-        $sql = "SELECT idcustomer, katalaluan FROM customer WHERE nric = '$idpengguna'";
+        $sql = "SELECT idpelajar,nokppelajar, kata FROM pelajar WHERE nokppelajar = '$idpengguna'";
         $result = $conn->query($sql);
         if ($result->num_rows==1){
             $row = $result->fetch_object();
-            if(password_verify($katalaluan, $row->katalaluan)) {
-                $_SESSION['idcustomer'] = $row->idcustomer;
-                header('location: customer/');
+            if(password_verify($katalaluan, $row->kata)) {
+                $_SESSION['idpelajar'] = $row->idpelajar;
+                header('location: pelajar/');
             }else{
                 ?>
                 <script>

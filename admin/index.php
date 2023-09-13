@@ -20,6 +20,8 @@ if(!isset($_SESSION['idpengguna'])) header('location: ../');
 
             <a href="index.php?menu=senarai_warden">Senarai Warden</a>
 
+            <a href="index.php?menu=cari_peralatan">Cari Peralatan</a>
+
             <a href="index.php?menu=profile">Profile</a>
 
             <a href="../include/logout.php">Log Keluar</a>
