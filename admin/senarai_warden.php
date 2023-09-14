@@ -26,7 +26,7 @@ if(!isset($_GET['edit'])){
                 </tr>
                 <tr>
                     <td>Katalaluan</td>
-                    <td><input type="text" name="katalaluan" required minlength="5" maxlength="10"></td>
+                    <td><input type="password" name="katalaluan" required></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -54,12 +54,12 @@ if(!isset($_GET['edit'])){
                     <td><input type="text" name="namawarden" required value="<?php echo $row->namawarden; ?>"></td>
                 </tr>
                 <tr>
-                    <td>No. Matrik</td>
+                    <td>No. Kp Warden</td>
                     <td><input type="text" name="nokpwarden" required value="<?php echo $row->nokpwarden; ?>" minlength="12" maxlength="12"></td>
                 </tr>
                 <tr>
                     <td>Katalaluan</td>
-                    <td><input type="text" name="kata" required minlength="5" maxlength="5"></td>
+                    <td><input type="password" name="kata" required></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -1,8 +1,8 @@
 <?php
-require '../conn.php';
+require '../include/conn.php';
 
-$idpelajar = $_GET['idpelajar'];
-$sql = "DELETE FROM pelajar where idpelajar = $idpelajar";
+$idwarden = $_GET['idwarden'];
+$sql = "DELETE FROM warden where idwarden = $idwarden";
 $conn->query($sql);
 
-header('location:index.php?menu=pelajar');
+header('location:index.php?menu=senarai_warden');
