@@ -1,7 +1,5 @@
 <?php
 
-require '../include/conn.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['katalama']) && isset($_POST['katabaru'])) {
         $katalama = $_POST['katalama'];

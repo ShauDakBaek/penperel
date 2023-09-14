@@ -9,7 +9,7 @@ if(!isset($_SESSION['idwarden'])) header('location: ../');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>PenPerEl - Warder Dashboard</title>
+    <title>PenPerEl - Warden Dashboard</title>
 </head>
 <body>
 <table>
@@ -20,7 +20,9 @@ if(!isset($_SESSION['idwarden'])) header('location: ../');
 
             <a href="index.php?menu=senarai_pelajar">Senarai Pelajar</a>
 
-            <a href="index.php?menu=tukarkata">Tukar Kata Laluan</a>
+            <a href="index.php?menu=senarai_peralatan">Senarai Peralatan</a>
+
+            <a href="index.php?menu=profile">Profile</a>
 
             <a href="../include/logout.php">Log Keluar</a>
         </td>
