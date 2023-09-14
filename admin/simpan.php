@@ -3,7 +3,7 @@ require '../include/conn.php';
 
 $namawarden = $_POST['namawarden'];
 $nokpwarden = $_POST['nokpwarden'];
-$katalaluan = $_POST['katalaluan'];
+$katalaluan = $_POST['nokpwarden'];
 
 $hashed = password_hash("$katalaluan", PASSWORD_BCRYPT);
 

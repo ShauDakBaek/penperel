@@ -52,17 +52,24 @@ if($row) {
     $sql2 = "SELECT * FROM `pelajar` WHERE `idpelajar` = '$row->pelajar'";
     $result2 = $conn->query($sql2);
 
+
+
     if (!$result2) {
         die("Query failed: " . $conn->error);
     }
 
     $row2 = $result2->fetch_object();
+    $sql3 = "SELECT namawarden FROM warden WHERE idwarden = '$row2->warden'";
+    $result3 = $conn->query($sql3);
+    $row3 = $result3->fetch_object();
 
     if ($row2) {
         echo
         "
         <h3>Butiran Peralatan</h3>
         <label>No.Siri : $row->nosiri</label>
+        <br>
+        <label>Nama Warden : $row3->namawarden</label>
         <br>
         <label>Nama Pelajar : $row2->namapelajar</label>
         <br>

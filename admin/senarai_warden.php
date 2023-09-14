@@ -25,10 +25,6 @@ if(!isset($_GET['edit'])){
                     <td><input type="text" name="nokpwarden" required minlength="12" maxlength="12"></td>
                 </tr>
                 <tr>
-                    <td>Katalaluan</td>
-                    <td><input type="password" name="katalaluan" required></td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <button type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
@@ -54,12 +50,8 @@ if(!isset($_GET['edit'])){
                     <td><input type="text" name="namawarden" required value="<?php echo $row->namawarden; ?>"></td>
                 </tr>
                 <tr>
-                    <td>No. Kp Warden</td>
+                    <td>No.KP Warden</td>
                     <td><input type="text" name="nokpwarden" required value="<?php echo $row->nokpwarden; ?>" minlength="12" maxlength="12"></td>
-                </tr>
-                <tr>
-                    <td>Katalaluan</td>
-                    <td><input type="password" name="kata" required></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -92,6 +84,8 @@ if(!isset($_GET['edit'])){
             <td><?php echo $row->nokpwarden; ?></td>
             <td>
                 <a href="index.php?menu=senarai_warden&edit=<?php echo $row->idwarden; ?>">Edit</a>
+                |
+                <a href="reset.php?idwarden=<?php echo $row->idwarden;?>" onclick="return sahkan()">Reset</a>
                 |
                 <a href="padam.php?idwarden=<?php echo $row->idwarden; ?>" onclick="return sahkan()">Padam</a>
             </td>
