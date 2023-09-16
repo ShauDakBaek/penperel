@@ -19,8 +19,8 @@
                 <div>
                     <h3 id="heading">PenPerEl</h3>
                 </div>
-                <input class="form-control" type="text" name="idpengguna" id="input-1" placeholder="ID Pengguna">
-                <input class="form-control" type="password" name="katalaluan" id="input-2" placeholder="Kata Laluan">
+                <input class="form-control" type="text" name="idpengguna" placeholder="ID Pengguna">
+                <input class="form-control" type="password" name="katalaluan" placeholder="Kata Laluan">
                 <button class="btn btn-primary" id="button" style="background-color: #007ac9;margin-right: 14px;padding-right: 0px;margin-left: 1px;" type="submit">Log in</button>
             </div>
         </div>
