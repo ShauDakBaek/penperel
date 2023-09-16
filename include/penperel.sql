@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 12, 2023 at 05:43 AM
+-- Generation Time: Sep 16, 2023 at 04:25 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`idadmin`, `kata`) VALUES
-(1, '$2y$10$h7hpKYAyM5O5Yqz9ZBKoEOaabJM9ZoFXTG3kfEl44D6sWBUlyvBfi');
+(1, '$2y$10$tK6g16cfIro73YhGcT4fcujPif27U5s2zDHPvCM2U/3I60KSM2O1K');
 
 -- --------------------------------------------------------
 
@@ -53,6 +53,13 @@ CREATE TABLE `pelajar` (
   `kata` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `pelajar`
+--
+
+INSERT INTO `pelajar` (`idpelajar`, `warden`, `namapelajar`, `nokppelajar`, `kata`) VALUES
+(5, 11, 'Shodiqin', '030504100095', '$2y$10$bSYFx4wcDD7CCpFdIIKXQu8bHjJgdyc45KSLzl7TmYuBrwnxfVj02');
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +73,13 @@ CREATE TABLE `peralatan` (
   `jenama` varchar(200) NOT NULL,
   `nosiri` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `peralatan`
+--
+
+INSERT INTO `peralatan` (`idperalatan`, `pelajar`, `jenisperalatan`, `jenama`, `nosiri`) VALUES
+(9, 5, 'Gergaji Elektrik', 'Bosch', 'X0002');
 
 -- --------------------------------------------------------
 
@@ -85,8 +99,8 @@ CREATE TABLE `warden` (
 --
 
 INSERT INTO `warden` (`idwarden`, `namawarden`, `nokpwarden`, `kata`) VALUES
-(1, 'Shauqi', '030504100097', 'Shauqi'),
-(2, 'Shau2', '030504100098', '$2y$10$nd1V63LmoI3tA9ZKhI3tUexXY.2XhB8rvLvVeW8iJ44TGcs8XbkZO');
+(11, 'Shaqiff', '030504100096', '$2y$10$GOA6EEafEdjkBY8ElrcCxOZ3Tad6q/yPuoHsAm0Qa.N89PtMN4B7K'),
+(12, 'Shauqi', '030504100097', '$2y$10$BKX9xZvgFHithiipC2FHdOt.et4V9cELKX2srB9GPozpL1h3nBnXu');
 
 --
 -- Indexes for dumped tables
@@ -133,19 +147,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `pelajar`
 --
 ALTER TABLE `pelajar`
-  MODIFY `idpelajar` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idpelajar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `peralatan`
 --
 ALTER TABLE `peralatan`
-  MODIFY `idperalatan` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idperalatan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `warden`
 --
 ALTER TABLE `warden`
-  MODIFY `idwarden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idwarden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
