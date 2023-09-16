@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $katalama = $_POST['katalama'];
         $katabaru = $_POST['katabaru'];
 
-        $idpelajar = 1;
+        $idpelajar = $_SESSION['idpelajar'];
 
         $sql = "SELECT kata FROM pelajar WHERE idpelajar = $idpelajar";
         $result = $conn->query($sql);
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             ?>
             <script>
-                alert('Warden not found. Please try again.');
+                alert('Pelajar not found. Please try again.');
                 window.location = 'index.php?menu=profile';
             </script>
             <?php

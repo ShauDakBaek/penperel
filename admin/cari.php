@@ -84,7 +84,7 @@ if($row) {
 
 
 } else {
-    echo "<br><label><i>Peralatan tidak dijumpai.</i></label>";
+    echo "<br><label><i>Peralatan bernombor siri: $nosiri tidak dijumpai.</i></label>";
 }
 ?>
 

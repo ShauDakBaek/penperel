@@ -1,13 +1,14 @@
 <?php
+require '../include/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['katalama']) && isset($_POST['katabaru'])) {
         $katalama = $_POST['katalama'];
         $katabaru = $_POST['katabaru'];
 
-        $wardenId = 1;
+        $wardenId = $_SESSION['idwarden'];
 
-        $sql = "SELECT kata FROM warden WHERE warden_id = $wardenId";
+        $sql = "SELECT kata FROM warden WHERE idwarden = $wardenId";
         $result = $conn->query($sql);
 
         if ($result->num_rows == 1) {
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $hashed = password_hash($katabaru, PASSWORD_BCRYPT);
 
-                $updatePass = "UPDATE warden SET kata = '$hashed' WHERE warden_id = $wardenId";
+                $updatePass = "UPDATE warden SET kata = '$hashed' WHERE idwarden = $wardenId";
                 if ($conn->query($updatePass)) {
                     ?>
                     <script>
