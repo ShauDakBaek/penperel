@@ -30,8 +30,8 @@ require '../include/conn.php';
 
 <?php
 $menu = 'cari_peralatan'; #default value
-if(isset($_GET['menu'])){
-    $menu=$_GET['menu'];
+if (isset($_GET['menu'])) {
+    $menu = $_GET['menu'];
 }
 include "$menu.php";
 ?>
@@ -42,16 +42,15 @@ $nosiri = $_GET['nosiri'];
 $sql = "SELECT * FROM `peralatan` WHERE `nosiri` = '$nosiri'";
 $result = $conn->query($sql);
 
-if(!$result) {
+if (!$result) {
     die("Query failed: " . $conn->error);
 }
 
 $row = $result->fetch_object();
 
-if($row) {
+if ($row) {
     $sql2 = "SELECT * FROM `pelajar` WHERE `idpelajar` = '$row->pelajar'";
     $result2 = $conn->query($sql2);
-
 
 
     if (!$result2) {
@@ -64,20 +63,18 @@ if($row) {
     $row3 = $result3->fetch_object();
 
     if ($row2) {
-        echo
-        "
+        ?>
         <h3>Butiran Peralatan</h3>
-        <label>No.Siri : $row->nosiri</label>
+        <label>No.Siri : <?php echo $row->nosiri ?></label>
         <br>
-        <label>Nama Warden : $row3->namawarden</label>
+        <label>Nama Warden : <?php echo $row3->namawarden ?></label>
         <br>
-        <label>Nama Pelajar : $row2->namapelajar</label>
+        <label>Nama Pelajar : <?php echo $row2->namapelajar ?></label>
         <br>
-        <label>Jenis Peralatan : $row->jenisperalatan</label>
+        <label>Jenis Peralatan : <?php echo $row->jenisperalatan ?></label>
         <br>
-        <label>Jenama : $row->jenama</label>
-        ";
-
+        <label>Jenama : <?php echo $row->jenama ?></label>
+        <?php
     } else {
         $namapelajar = "Pelajar not found"; // Set a default value or error message.
     }

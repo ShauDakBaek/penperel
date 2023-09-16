@@ -7,8 +7,8 @@ $katalaluan = $_POST['katalaluan'];
 if ($idpengguna == 'admin') {
     $sql = 'SELECT * FROM admin';
     $row = $conn->query($sql)->fetch_object();
-    if (password_verify($katalaluan, $row ->kata)){
-        $_SESSION['idpengguna']='admin';
+    if (password_verify($katalaluan, $row->kata)) {
+        $_SESSION['idpengguna'] = 'admin';
         header('location: admin/');
     } else {
         ?>
@@ -18,31 +18,31 @@ if ($idpengguna == 'admin') {
         </script>
         <?php
     }
-}else{
+} else {
     $sql = "SELECT idwarden,nokpwarden, kata FROM warden WHERE nokpwarden = '$idpengguna'";
     $result = $conn->query($sql);
-    if($result->num_rows==1){
+    if ($result->num_rows == 1) {
         $row = $result->fetch_object();
-        if (password_verify($katalaluan, $row->kata)){
+        if (password_verify($katalaluan, $row->kata)) {
             $_SESSION['idwarden'] = $row->idwarden;
             header('location: warden/');
-        }else{
+        } else {
             ?>
             <script>
                 alert('Maaf, kata laluan salah.');
-                window.location='./';
+                window.location = './';
             </script>
             <?php
         }
     } else {
         $sql = "SELECT idpelajar,nokppelajar, kata FROM pelajar WHERE nokppelajar = '$idpengguna'";
         $result = $conn->query($sql);
-        if ($result->num_rows==1){
+        if ($result->num_rows == 1) {
             $row = $result->fetch_object();
-            if(password_verify($katalaluan, $row->kata)) {
+            if (password_verify($katalaluan, $row->kata)) {
                 $_SESSION['idpelajar'] = $row->idpelajar;
                 header('location: pelajar/');
-            }else{
+            } else {
                 ?>
                 <script>
                     alert('Maaf, kata laluan salah.');

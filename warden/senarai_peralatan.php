@@ -15,16 +15,33 @@ $sql = "SELECT peralatan.idperalatan, pelajar.namapelajar, peralatan.jenisperala
         INNER JOIN pelajar ON peralatan.pelajar = pelajar.idpelajar
         WHERE pelajar.warden = '$idwarden'";
 
-
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table>";
-    echo "<tr><th>ID</th><th>Nama Pelajar</th><th>Jenis Peralatan</th><th>Jenama</th><th>No Siri</th></tr>";
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["idperalatan"] . "</td><td>" . $row["namapelajar"] . "</td><td>" . $row["jenisperalatan"] . "</td><td>" . $row["jenama"] . "</td><td>" . $row["nosiri"] . "</td></tr>";
-    }
-    echo "</table>";
+    ?>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nama Pelajar</th>
+            <th>Jenis Peralatan</th>
+            <th>Jenama</th>
+            <th>No Siri</th>
+        </tr>
+        <?php
+        while ($row = $result->fetch_object()) {
+            ?>
+            <tr>
+                <td><?php echo $row->idperalatan ?></td>
+                <td><?php echo $row->namapelajar ?></td>
+                <td><?php echo $row->jenisperalatan ?></td>
+                <td><?php echo $row->jenama ?></td>
+                <td><?php echo $row->nosiri ?></td>
+            </tr>
+            <?php
+        }
+        ?>
+    </table>
+    <?php
 } else {
     echo "No records found.";
 }

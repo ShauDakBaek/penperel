@@ -1,6 +1,6 @@
 <?php
 require '../include/conn.php';
-$idpelajar=$_SESSION['idpelajar'];
+$idpelajar = $_SESSION['idpelajar'];
 
 $jenisperalatan = $_POST['jenisperalatan'];
 $jenama = $_POST['jenama'];

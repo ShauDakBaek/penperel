@@ -6,9 +6,9 @@ $katabaru = $_POST['katabaru'];
 
 $sql = 'SELECT kata FROM admin';
 $result = $conn->query($sql);
-if($result->num_rows==1){
+if ($result->num_rows == 1) {
     $row = $result->fetch_object();
-    if(password_verify($katalama, $row->kata)) {
+    if (password_verify($katalama, $row->kata)) {
         $hashed = password_hash($katabaru, PASSWORD_BCRYPT);
         $updatePass = "UPDATE admin SET kata = '$hashed'";
         $conn->query($updatePass);
@@ -18,7 +18,7 @@ if($result->num_rows==1){
             window.location = '../logout.php';
         </script>
         <?php
-    }else{
+    } else {
         ?>
         <script>
             alert('Maaf. Katalaluan lama salah. Sila cuba lagi.')

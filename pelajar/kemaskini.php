@@ -1,8 +1,8 @@
 <?php
 require '../include/conn.php';
 
-$idperalatan=$_POST['idperalatan'];
-$jenisperalatan=$_POST['jenisperalatan'];
+$idperalatan = $_POST['idperalatan'];
+$jenisperalatan = $_POST['jenisperalatan'];
 $jenama = $_POST['jenama'];
 $nosiri = $_POST['nosiri'];
 

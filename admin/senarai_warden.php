@@ -10,7 +10,7 @@
 <body>
 <h2>Senarai Warden</h2>
 <?php
-if(!isset($_GET['edit'])){
+if (!isset($_GET['edit'])) {
     ?>
     <form action="simpan.php" method="post">
         <fieldset>
@@ -34,7 +34,7 @@ if(!isset($_GET['edit'])){
         </fieldset>
     </form>
     <?php
-}else{
+} else {
     $idwarden = $_GET['edit'];
     $sql = "SELECT * FROM warden WHERE idwarden = $idwarden";
     $result = $conn->query($sql);
@@ -51,7 +51,8 @@ if(!isset($_GET['edit'])){
                 </tr>
                 <tr>
                     <td>No.KP Warden</td>
-                    <td><input type="text" name="nokpwarden" required value="<?php echo $row->nokpwarden; ?>" minlength="12" maxlength="12"></td>
+                    <td><input type="text" name="nokpwarden" required value="<?php echo $row->nokpwarden; ?>"
+                               minlength="12" maxlength="12"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -85,7 +86,7 @@ if(!isset($_GET['edit'])){
             <td>
                 <a href="index.php?menu=senarai_warden&edit=<?php echo $row->idwarden; ?>">Edit</a>
                 |
-                <a href="reset.php?idwarden=<?php echo $row->idwarden;?>" onclick="return sahkan()">Reset</a>
+                <a href="reset.php?idwarden=<?php echo $row->idwarden; ?>" onclick="return sahkan()">Reset</a>
                 |
                 <a href="padam.php?idwarden=<?php echo $row->idwarden; ?>" onclick="return sahkan()">Padam</a>
             </td>

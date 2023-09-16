@@ -1,11 +1,11 @@
 <?php
 require '../include/conn.php';
-if(!isset($_SESSION['idpelajar'])) header('location: ../');
-$idpelajar=$_SESSION['idpelajar'];
+if (!isset($_SESSION['idpelajar'])) header('location: ../');
+$idpelajar = $_SESSION['idpelajar'];
 
-$sql="SELECT namapelajar FROM pelajar WHERE idpelajar=$idpelajar";
-$row=$conn->query($sql)->fetch_object();
-$namapelajar=$row->namapelajar;
+$sql = "SELECT namapelajar FROM pelajar WHERE idpelajar=$idpelajar";
+$row = $conn->query($sql)->fetch_object();
+$namapelajar = $row->namapelajar;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,8 @@ $namapelajar=$row->namapelajar;
 
 <?php
 $menu = 'home'; #default value
-if(isset($_GET['menu'])){
-    $menu=$_GET['menu'];
+if (isset($_GET['menu'])) {
+    $menu = $_GET['menu'];
 }
 include "$menu.php";
 ?>

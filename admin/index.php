@@ -1,6 +1,6 @@
 <?php
 require '../include/conn.php';
-if(!isset($_SESSION['idpengguna'])) header('location: ../');
+if (!isset($_SESSION['idpengguna'])) header('location: ../');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +31,8 @@ if(!isset($_SESSION['idpengguna'])) header('location: ../');
 
 <?php
 $menu = 'home'; #default value
-if(isset($_GET['menu'])){
-    $menu=$_GET['menu'];
+if (isset($_GET['menu'])) {
+    $menu = $_GET['menu'];
 }
 include "$menu.php";
 ?>

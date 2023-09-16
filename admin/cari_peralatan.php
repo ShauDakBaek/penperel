@@ -7,7 +7,7 @@
 <body>
 <h2>Cari Peralatan</h2>
 <form action="cari.php" method="get">
-    <input name="nosiri" placeholder="No. Siri Peralatan">
+    <input name="nosiri" placeholder="No. Siri Peralatan" required>
     <button type="submit">Cari</button>
 </form>
 </body>

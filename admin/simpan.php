@@ -11,7 +11,7 @@ $checksql = "SELECT COUNT(*) AS count FROM warden WHERE nokpwarden = '$nokpwarde
 $result = $conn->query($checksql);
 $row = $result->fetch_object();
 
-if ($row->count==0){
+if ($row->count == 0) {
     $sql = "INSERT INTO warden VALUES(null, '$namawarden', '$nokpwarden', '$hashed')";
     $conn->query($sql);
     header('location: index.php?menu=senarai_warden');

@@ -1,5 +1,5 @@
 <?php
-$idpelajar=$_SESSION['idpelajar'];
+$idpelajar = $_SESSION['idpelajar'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ $idpelajar=$_SESSION['idpelajar'];
 <body>
 <h2>Senarai Peralatan Elektrik</h2>
 <?php
-if(!isset($_GET['edit'])){
+if (!isset($_GET['edit'])) {
     ?>
     <form action="simpan.php" method="post">
         <fieldset>
@@ -21,15 +21,15 @@ if(!isset($_GET['edit'])){
             <table>
                 <tr>
                     <td>Jenis Peralatan</td>
-                    <td><input type="text" name="jenisperalatan" required minlength="2" ></td>
+                    <td><input type="text" name="jenisperalatan" required minlength="2"></td>
                 </tr>
                 <tr>
                     <td>Jenama</td>
-                    <td><input type="text" name="jenama" required minlength="2" ></td>
+                    <td><input type="text" name="jenama" required minlength="2"></td>
                 </tr>
                 <tr>
                     <td>No. Siri</td>
-                    <td><input type="text" name="nosiri" required minlength="2" ></td>
+                    <td><input type="text" name="nosiri" required minlength="2"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -41,7 +41,7 @@ if(!isset($_GET['edit'])){
         </fieldset>
     </form>
     <?php
-}else{
+} else {
     $idperalatan = $_GET['edit'];
     $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan";
     $result = $conn->query($sql);
@@ -54,7 +54,8 @@ if(!isset($_GET['edit'])){
             <table>
                 <tr>
                     <td>Jenis Peralatan</td>
-                    <td><input type="text" name="jenisperalatan" required value="<?php echo $row->jenisperalatan; ?>"></td>
+                    <td><input type="text" name="jenisperalatan" required value="<?php echo $row->jenisperalatan; ?>">
+                    </td>
                 </tr>
                 <tr>
                     <td>Jenama</td>

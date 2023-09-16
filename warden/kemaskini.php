@@ -1,7 +1,7 @@
 <?php
 require '../include/conn.php';
 
-$idpelajar=$_POST['idpelajar'];
+$idpelajar = $_POST['idpelajar'];
 $namapelajar = $_POST['namapelajar'];
 $nokppelajar = $_POST['nokppelajar'];
 $kata = $_POST['kata'];
