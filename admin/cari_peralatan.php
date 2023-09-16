@@ -53,8 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nosiri'])) {
     } else {
         echo "<br><label><i>Peralatan bernombor siri: $nosiri tidak dijumpai.</i></label>";
     }
-} else {
-
 }
 ?>
 </body>
