@@ -15,7 +15,7 @@ if($result->num_rows==1){
         ?>
         <script>
             alert('Katalaluan berjaya dikemaskini. Sila log masuk semula.');
-            window.location = '../include/logout.php';
+            window.location = '../logout.php';
         </script>
         <?php
     }else{

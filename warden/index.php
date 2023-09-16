@@ -24,7 +24,7 @@ if(!isset($_SESSION['idwarden'])) header('location: ../');
 
             <a href="index.php?menu=profile">Profile</a>
 
-            <a href="../include/logout.php">Log Keluar</a>
+            <a href="../logout.php">Log Keluar</a>
         </td>
     </tr>
 </table>
