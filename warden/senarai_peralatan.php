@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Senarai Peralatan</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <h1>Senarai Peralatan</h1>
