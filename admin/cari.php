@@ -34,5 +34,6 @@ if ($row) {
     header("Location: index.php?menu=cari_peralatan&nosiri=$nosiri");
     exit();
 } else {
-    echo "<br><label><i>Peralatan bernombor siri: $nosiri tidak dijumpai.</i></label>";
+    header("Location: index.php?menu=cari_peralatan&nosiri=$nosiri");
+    exit();
 }
