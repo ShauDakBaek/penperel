@@ -11,12 +11,10 @@ if ($idpengguna == 'admin') {
         $_SESSION['idpengguna'] = 'admin';
         header('location: admin/');
     } else {
-        ?>
-        <script>
-            alert('Maaf, kata laluan salah.');
-            window.location = './';
-        </script>
-        <?php
+        $_SESSION['login'] = 'yo';
+        // Redirect back to the login page
+        header('location: ./');
+        exit;
     }
 } else {
     $sql = "SELECT idwarden,nokpwarden, kata FROM warden WHERE nokpwarden = '$idpengguna'";
