@@ -2,9 +2,20 @@
 require '../include/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['katalama']) && isset($_POST['katabaru'])) {
+    if (isset($_POST['katalama']) && isset($_POST['katabaru']) && isset($_POST['ulangkatabaru'])) {
         $katalama = $_POST['katalama'];
         $katabaru = $_POST['katabaru'];
+        $ulangkatabaru = $_POST['ulangkatabaru'];
+
+        if ($katabaru !== $ulangkatabaru) {
+            ?>
+            <script>
+                alert('Katalaluan baru dan pengesahan tidak sepadan. Sila cuba lagi.');
+                window.location = 'index.php?menu=profile';
+            </script>
+            <?php
+            exit; // Exit the script if passwords don't match
+        }
 
         $wardenId = $_SESSION['idwarden'];
 
