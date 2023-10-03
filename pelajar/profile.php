@@ -7,7 +7,9 @@
         <br>
         <label>Katalaluan Baru:</label>
         <input type="password" name="katabaru" required>
-
+        <br>
+        <label>Ulang Katalaluan Baru:</label>
+        <input type="password" name="ulangkatabaru" required>
         <br>
         <button type="submit">Kemaskini</button>
     </form>
