@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Senarai Pelajar</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../include/style.css">
 </head>
 <body>
 <h1>Senarai Pelajar</h1>

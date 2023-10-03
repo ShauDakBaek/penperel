@@ -13,15 +13,15 @@ $namapelajar = $row->namapelajar;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../include/style.css">
     <title>PenPerEl - Pelajar Dashboard</title>
 </head>
 <body>
-<table>
+<table class="header">
     <tr>
         <td>PenPerEl</td>
-        <td>
-            <a href="index.php?menu=home">Home</a>
+        <td class="navbar">
+            <a class="a1" href="index.php?menu=home">Home</a>
 
             <a href="index.php?menu=senarai_peralatan">Senarai Peralatan</a>
 

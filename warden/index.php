@@ -8,15 +8,15 @@ if (!isset($_SESSION['idwarden'])) header('location: ../');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../include/style.css">
     <title>PenPerEl - Warden Dashboard</title>
 </head>
 <body>
-<table>
+<table class="header">
     <tr>
         <td>PenPerEl</td>
-        <td>
-            <a href="index.php?menu=home">Home</a>
+        <td class="navbar">
+            <a class="a2" href="index.php?menu=home">Home</a>
 
             <a href="index.php?menu=senarai_pelajar">Senarai Pelajar</a>
 

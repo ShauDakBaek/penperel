@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Profile Warden</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../include/style.css">
 </head>
 <body>
 <h1>Profile</h1>
