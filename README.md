@@ -23,7 +23,7 @@ PELAJAR 030504100095:abc123
 
 PERANAN
 
-SHAUQI : Login, Admin
+SHAUQI : Admin
 
 SHODIQIN : Pelajar
 
