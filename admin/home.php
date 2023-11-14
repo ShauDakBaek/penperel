@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 <h1>Selamat datang, Admin!</h1>
 <br>
 
@@ -25,5 +18,3 @@ $row3 = $result3->fetch_object();
 <h3>Jumlah Warden : <?php echo $row2->count; ?></h3>
 <h3>Jumlah Pelajar : <?php echo $row->count; ?></h3>
 <h3>Jumlah Peralatan : <?php echo $row3->count; ?></h3>
-</body>
-</html>

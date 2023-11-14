@@ -13,14 +13,17 @@ $checksql = "SELECT COUNT(*) AS count FROM pelajar WHERE nokppelajar = '$nokppel
 $result = $conn->query($checksql);
 $row = $result->fetch_object();
 
-if ($row->count == 0) {
+$checksql2 = "SELECT * FROM warden WHERE nokpwarden = '$nokppelajar'";
+$result1 = $conn->query($checksql2);
+
+if ($row->count == 0 && $row1 = $result1->num_rows==0) {
     $sql = "INSERT INTO pelajar (warden,namapelajar, nokppelajar, kata) VALUES ('$idwarden','$namapelajar', '$nokppelajar', '$hashed')";
     $conn->query($sql);
     header('location: index.php?menu=senarai_pelajar');
 } else {
     ?>
     <script>
-        alert('NoKP Pelajar teleh wujud.');
+        alert('NoKP teleh wujud.');
         window.location = 'index.php?menu=senarai_pelajar';
     </script>
     <?php

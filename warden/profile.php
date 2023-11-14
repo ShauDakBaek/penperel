@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Profile Warden</title>
-    <link rel="stylesheet" type="text/css" href="../include/style.css">
-</head>
-<body>
 <h1>Profile</h1>
 <div>
+    <h3>Ubah Katalaluan Baru</h3>
     <form action="tukarkata.php" method="post">
         <label>Katalaluan Lama :</label>
         <input type="password" name="katalama" required>
@@ -20,5 +14,3 @@
         <button type="submit">Kemaskini</button>
     </form>
 </div>
-</body>
-</html>

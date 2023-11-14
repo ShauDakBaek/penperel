@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Senarai Peralatan</title>
-    <link rel="stylesheet" type="text/css" href="../include/style.css">
-</head>
-<body>
 <h1>Senarai Peralatan</h1>
 
 <?php
@@ -49,5 +42,3 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-</body>
-</html>

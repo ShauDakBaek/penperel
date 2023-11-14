@@ -1,16 +1,6 @@
 <?php
 $idpelajar = $_SESSION['idpelajar'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelajar</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 <h2>Senarai Peralatan Elektrik</h2>
 <?php
 if (!isset($_GET['edit'])) {
@@ -88,7 +78,7 @@ if (!isset($_GET['edit'])) {
 
     <?php
     $bil = 1;
-    $sql = "SELECT * FROM peralatan WHERE pelajar = $idpelajar ORDER BY jenisperalatan";
+    $sql = "SELECT * FROM peralatan WHERE pelajar = $idpelajar ORDER BY nosiri ASC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_object()) {
         ?>
@@ -112,5 +102,3 @@ if (!isset($_GET['edit'])) {
         return confirm('Adakah anda pasti?');
     }
 </script>
-</body>
-</html>

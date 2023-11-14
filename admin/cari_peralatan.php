@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cari Peralatan</title>
-</head>
-<body>
 <h2>Cari Peralatan</h2>
 <form action="cari.php" method="post">
     <input name="nosiri" placeholder="No. Siri Peralatan" required>
@@ -55,5 +48,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nosiri'])) {
     }
 }
 ?>
-</body>
-</html>

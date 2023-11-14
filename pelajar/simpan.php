@@ -6,7 +6,18 @@ $jenisperalatan = $_POST['jenisperalatan'];
 $jenama = $_POST['jenama'];
 $nosiri = $_POST['nosiri'];
 
-$sql = "INSERT INTO peralatan VALUES(null, '$idpelajar', '$jenisperalatan', '$jenama', '$nosiri')";
-$conn->query($sql);
+$sqlCheck = "SELECT * FROM peralatan WHERE nosiri = '$nosiri'";
+$result = $conn->query($sqlCheck);
 
-header('location: index.php?menu=senarai_peralatan');
+if($row = $result->num_rows == 0){
+    $sql = "INSERT INTO peralatan VALUES(null, '$idpelajar', '$jenisperalatan', '$jenama', '$nosiri')";
+    $conn->query($sql);
+    header('location: index.php?menu=senarai_peralatan');
+}else {
+    ?>
+    <script>
+    alert('No Siri teleh wujud.');
+    window.location = 'index.php?menu=senarai_peralatan';
+    </script>
+    <?php
+}

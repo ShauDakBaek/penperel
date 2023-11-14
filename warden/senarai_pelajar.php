@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Senarai Pelajar</title>
-    <link rel="stylesheet" type="text/css" href="../include/style.css">
-</head>
-<body>
 <h1>Senarai Pelajar</h1>
 
 <?php
@@ -102,5 +95,3 @@ if (!isset($_GET['edit'])) {
         return confirm('Adakah anda pasti?');
     }
 </script>
-</body>
-</html>
